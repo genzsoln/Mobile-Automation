@@ -26,12 +26,8 @@ public class searchFlight {
 		cap.setCapability("deviceName", "Android SDK built for x86");
 		cap.setCapability("udid", "emulator-5554");
 		
-//		b0d3f02a
-//		emulator-5554
-		
 //		Application details
 //		cap.setCapability("app", "C://Users//Admin//Desktop//Automation//APK's//lufthansa.apk");
-		
 		cap.setCapability("appPackage", "com.lufthansa.android.lufthansa");
 		cap.setCapability("appActivity", "com.lufthansa.android.lufthansa.ui.activity.HomeActivity");
 		
@@ -44,11 +40,11 @@ public class searchFlight {
 		
 	}
 	
-//	@After
-//	public static void closeDriver() {
-//		driver.quit();
-//		System.out.println("Application closed");
-//	}
+	@After
+	public static void closeDriver() {
+		driver.quit();
+		System.out.println("Application closed");
+	}
 	
 
 	@Given("Open lufthansa application on android emulator")
@@ -103,12 +99,24 @@ public class searchFlight {
 	@And("User selects DATE")
 	public void user_selects_date() throws Exception {
 		driver.findElementByXPath("//android.widget.RelativeLayout[@content-desc=\"From date\"]/android.widget.TextView[2]").click();
-		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ListView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.view.ViewGroup[5]/android.widget.FrameLayout[3]/android.widget.TextView").click();
-		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ListView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.view.ViewGroup[5]/android.widget.FrameLayout[7]/android.widget.TextView").click();
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ListView/android.widget.LinearLayout[2]/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.FrameLayout[3]/android.widget.TextView").click();
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ListView/android.widget.LinearLayout[2]/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.FrameLayout[6]/android.widget.TextView").click();
 		driver.findElementById("com.lufthansa.android.lufthansa:id/confirm_button").click();
 		System.out.println("Date selected");
 		Thread.sleep(2000);
 	}
+	
+	/*
+	   MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ListView/android.widget.LinearLayout[2]/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.FrameLayout[3]/android.widget.TextView");
+el2.click();
+MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ListView/android.widget.LinearLayout[2]/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.FrameLayout[6]/android.widget.TextView");
+el3.click();
+	  
+	 
+	 */
+	
+	
+	
 	
 	@And("User selects passengers and seat type")
 	public void user_selects_passengers_and_seat_type() {
